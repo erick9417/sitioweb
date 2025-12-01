@@ -9,6 +9,14 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const phone = "50663819141";
+    const text = `Hola, soy ${formData.name || "[Sin nombre]"}.\nEmail: ${formData.email || "[Sin email]"}.\n\nMensaje: ${formData.message || "[Sin mensaje]"}.\n\nEnviado desde lucvanlatam.com`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <section id="contacto" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 text-white relative overflow-hidden" ref={ref}>
       {/* Animated Background */}
@@ -62,7 +70,7 @@ export default function Contact() {
               className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20"
               whileHover={{ boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.25)" }}
             >
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-medium mb-2 text-purple-200">
                     Nombre Completo
@@ -114,6 +122,7 @@ export default function Contact() {
                   Enviar Mensaje
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
+                <p className="text-xs text-purple-300 text-center">Se abrirá WhatsApp con tu mensaje prellenado.</p>
               </form>
             </motion.div>
           </motion.div>
@@ -130,19 +139,19 @@ export default function Contact() {
               {
                 icon: MapPin,
                 title: "Visítanos",
-                content: "Av. Principal 123, Ciudad, País",
+                content: "200m al oeste del Hospital San Rafael de Alajuela, Costa Rica",
                 color: "from-blue-400 to-cyan-500",
               },
               {
                 icon: Phone,
                 title: "Llámanos",
-                content: "+1 (555) 123-4567",
+                content: "(+506) 2430 4847 | 6096 1784",
                 color: "from-purple-400 to-pink-500",
               },
               {
                 icon: Mail,
                 title: "Escríbenos",
-                content: "info@plantillaspremium.com",
+                content: "info@lucvanlatam.com",
                 color: "from-pink-400 to-rose-500",
               },
             ].map((item, index) => {
@@ -211,8 +220,8 @@ export default function Contact() {
             >
               <h3 className="text-xl font-bold mb-4">Horario de Atención</h3>
               <div className="space-y-2 text-purple-200">
-                <p>Lunes - Viernes: 9:00 AM - 7:00 PM</p>
-                <p>Sábados: 10:00 AM - 6:00 PM</p>
+                <p>Lunes - Viernes: 8:00 AM - 5:00 PM</p>
+                <p>Sábados: 10:00 AM - 2:00 PM</p>
                 <p>Domingos: Cerrado</p>
               </div>
             </motion.div>
@@ -226,7 +235,7 @@ export default function Contact() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <p>&copy; 2025 Plantillas Premium. Todos los derechos reservados.</p>
+          <p>&copy; 2025 LucvanLATAM. Todos los derechos reservados.</p>
         </motion.div>
       </div>
 
