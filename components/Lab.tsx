@@ -68,14 +68,27 @@ export default function Lab() {
               Indica preferencias o necesidades de tus pacientes. Tambien puedes solicitar soporte tecnico. Plazo maximo estimado: 7 dias laborales para recibir las ortesis en tu centro.
             </p>
           </div>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold shadow-xl flex items-center gap-2 w-fit"
-          >
-            Solicitar Informacion
-            <span className="text-lg">›</span>
-          </motion.button>
+          <div className="flex flex-wrap gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold shadow-xl flex items-center gap-2 w-fit"
+            >
+              Solicitar Informacion
+              <span className="text-lg">›</span>
+            </motion.button>
+            <motion.a
+              href="https://sistema.lucvanlatam.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 rounded-full border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 font-semibold shadow-lg flex items-center gap-2 w-fit transition-colors"
+            >
+              Iniciar Sesión
+              <span className="text-lg">›</span>
+            </motion.a>
+          </div>
         </motion.div>
       </div>
     </section>
