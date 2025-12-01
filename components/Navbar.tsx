@@ -20,7 +20,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="relative w-16 h-16">
+            <div className="relative w-24 h-24">
               <Image
                 src="/plantillas/lucvan-logo-web.png"
                 alt="Lucvan Logo"
@@ -33,9 +33,6 @@ export default function Navbar() {
 
           {/* Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#lab" className="text-slate-300 hover:text-white transition-colors font-medium">
-              Lab
-            </a>
             <a href="#quienes" className="text-slate-300 hover:text-white transition-colors font-medium">
               Quiénes Somos
             </a>
@@ -47,6 +44,9 @@ export default function Navbar() {
             </a>
             <a href="#contacto" className="text-slate-300 hover:text-white transition-colors font-medium">
               Contacto
+            </a>
+            <a href="#lab" className="text-slate-300 hover:text-white transition-colors font-medium">
+              Lucvan LAB
             </a>
           </div>
 
