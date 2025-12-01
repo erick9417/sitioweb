@@ -55,7 +55,7 @@ export default function Lab() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="space-y-8"
         >
-          <span className="inline-block text-sm font-semibold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">LucvanLab</span>
+          <span className="inline-block text-2xl sm:text-3xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(34,211,238,0.35)]">LucvanLab</span>
           <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
             <span className="block text-white">Central de Fabricacion</span>
             <span className="block bg-gradient-to-r from-purple-200 via-pink-200 to-cyan-200 bg-clip-text text-transparent">a Medida</span>

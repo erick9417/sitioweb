@@ -148,7 +148,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Trust Indicators */}
+        {/* Trust Indicators (certificate removed) */}
         <motion.div
           className="mt-20 text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -163,13 +163,6 @@ export default function Testimonials() {
               <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" />
               <span className="text-lg font-semibold">4.9/5 de 2,000+ reseñas</span>
             </motion.div>
-            <div className="w-px h-8 bg-slate-300" />
-            <motion.span
-              className="text-lg font-semibold"
-              whileHover={{ scale: 1.1 }}
-            >
-              Certificado ISO 9001
-            </motion.span>
             <div className="w-px h-8 bg-slate-300" />
             <motion.span
               className="text-lg font-semibold"
