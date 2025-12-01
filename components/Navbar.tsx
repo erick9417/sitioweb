@@ -33,8 +33,11 @@ export default function Navbar() {
 
           {/* Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#productos" className="text-slate-300 hover:text-white transition-colors font-medium">
-              Productos
+            <a href="#lab" className="text-slate-300 hover:text-white transition-colors font-medium">
+              Lab
+            </a>
+            <a href="#quienes" className="text-slate-300 hover:text-white transition-colors font-medium">
+              Quiénes Somos
             </a>
             <a href="#beneficios" className="text-slate-300 hover:text-white transition-colors font-medium">
               Beneficios
