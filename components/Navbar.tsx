@@ -53,7 +53,7 @@ export default function Navbar() {
           {/* CTA Buttons */}
           <div className="flex items-center gap-4">
             <motion.a
-              href="#beneficios"
+              href="/test"
               aria-label="Test: ¿Es para mi?"
               className="hidden sm:block px-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all"
               whileHover={{ scale: 1.05 }}
