@@ -59,27 +59,7 @@ export default function About() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col md:flex-row items-center justify-between gap-8 rounded-3xl bg-slate-900/70 border border-slate-700/60 p-10"
-        >
-          <div className="space-y-3 max-w-xl">
-            <h3 className="text-2xl font-bold text-white">Innovación, Flexibilidad y Calidad</h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
-              Combinamos tecnología y experiencia para mejorar la calidad de vida de pacientes y potenciar el trabajo especializado en cada consulta.
-            </p>
-          </div>
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="#contacto"
-            className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold shadow-lg"
-          >
-            Contactar Equipo
-          </motion.a>
-        </motion.div>
+
       </div>
     </section>
   );

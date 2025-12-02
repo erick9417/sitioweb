@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, MapPin, Phone, Mail, Instagram, Facebook, Twitter } from "lucide-react";
+import { Send, MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -189,15 +189,16 @@ export default function Contact() {
               <h3 className="text-xl font-bold mb-4">Síguenos</h3>
               <div className="flex gap-4">
                 {[
-                  { icon: Instagram, color: "from-pink-500 to-purple-500" },
-                  { icon: Facebook, color: "from-blue-500 to-blue-600" },
-                  { icon: Twitter, color: "from-cyan-400 to-blue-500" },
+                  { icon: Instagram, color: "from-pink-500 to-purple-500", url: "https://www.instagram.com/lab.ortopedico_cr/" },
+                  { icon: Facebook, color: "from-blue-500 to-blue-600", url: "https://www.facebook.com/p/Laboratorio-Ortop%C3%A9dico-100063572172602/?locale=es_LA" },
                 ].map((social, index) => {
                   const Icon = social.icon;
                   return (
                     <motion.a
                       key={index}
-                      href="#"
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.color} flex items-center justify-center`}
                       whileHover={{ scale: 1.15, rotate: 360 }}
                       whileTap={{ scale: 0.9 }}
