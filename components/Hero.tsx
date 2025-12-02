@@ -19,36 +19,36 @@ const plantillas: Plantilla[] = [
     nombre: "Sport",
     tipo: "Alto Rendimiento",
     descripcion:
-      "Disenado para deportistas que buscan maximo soporte y absorcion de impacto en actividades de alta intensidad.",
+      "Diseñado para deportistas que buscan máximo soporte y absorción de impacto en actividades de alta intensidad.",
     imagen: "/plantillas/Sport.png",
     contexto: "Ideal para corredores, atletas y deportistas activos",
     gradiente: "from-orange-500 via-red-500 to-pink-500",
   },
   {
-    nombre: "Pronacion",
-    tipo: "Correccion Postural",
+    nombre: "Pronación",
+    tipo: "Corrección Postural",
     descripcion:
-      "Especializadas en corregir la pronacion del pie, mejorando tu postura y eliminando dolores articulares.",
+      "Especializadas en corregir la pronación del pie, mejorando tu postura y eliminando dolores articulares.",
     imagen: "/plantillas/Pronacion.png",
-    contexto: "Para quienes necesitan correccion de pisada",
+    contexto: "Para quienes necesitan corrección de pisada",
     gradiente: "from-blue-500 via-cyan-500 to-teal-500",
   },
   {
     nombre: "Soporte",
     tipo: "Confort Premium",
     descripcion:
-      "Maximo confort para uso diario prolongado. Perfectas para largas jornadas laborales y caminatas extensas.",
+      "Máximo confort para uso diario prolongado. Perfectas para largas jornadas laborales y caminatas extensas.",
     imagen: "/plantillas/Soporte.png",
-    contexto: "Confort superior para el dia a dia",
+    contexto: "Confort superior para el día a día",
     gradiente: "from-purple-500 via-indigo-500 to-blue-500",
   },
   {
     nombre: "Fascitis",
     tipo: "Tratamiento Especializado",
     descripcion:
-      "Diseno ortopedico especifico para tratar y prevenir la fascistis plantar y dolores en el talon.",
+      "Diseño ortopédico específico para tratar y prevenir la fascitis plantar y dolores en el talón.",
     imagen: "/plantillas/Fascitis.png",
-    contexto: "Solucion para dolor de talon y fascitis",
+    contexto: "Solución para dolor de talón y fascitis",
     gradiente: "from-emerald-500 via-green-500 to-teal-500",
   },
 ];

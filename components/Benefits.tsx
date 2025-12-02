@@ -29,7 +29,7 @@ const stats = [
   {
     icon: Award,
     value: "30+",
-    label: "Anos en el mercado",
+    label: "Años en el mercado",
     color: "from-purple-500 to-pink-500",
   },
 ];
@@ -64,7 +64,7 @@ export default function Benefits() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Atencion integral y personalizada en nuestro consultorio
+              Atención integral y personalizada en nuestro consultorio
             </motion.p>
 
             <div className="space-y-4">

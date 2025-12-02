@@ -53,19 +53,19 @@ export default function Lab() {
           initial={{ opacity: 0, x: 40 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="space-y-8"
+          className="space-y-10"
         >
           <span className="inline-block text-2xl sm:text-3xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(34,211,238,0.35)]">LucvanLab</span>
-          <h2 className="text-4xl sm:text-5xl font-bold leading-tight">
-            <span className="block text-white">Central de Fabricacion</span>
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+            <span className="block text-white">Central de Fabricación</span>
             <span className="block bg-gradient-to-r from-purple-200 via-pink-200 to-cyan-200 bg-clip-text text-transparent">a Medida</span>
           </h2>
           <div className="grid sm:grid-cols-2 gap-8 text-slate-300 text-sm leading-relaxed">
             <p>
-              Servicio profesional para la fabricacion de ortesis plantares personalizadas. Puedes enviarnos espumas de impresion, estudios de marcha o escaneados 3D junto a nuestro protocolo de fabricacion.
+              Servicio profesional para la fabricación de órtesis plantares personalizadas. Puedes enviarnos espumas de impresión, estudios de marcha o escaneados 3D junto a nuestro protocolo de fabricación.
             </p>
             <p>
-              Indica preferencias o necesidades de tus pacientes. Tambien puedes solicitar soporte tecnico. Plazo maximo estimado: 7 dias laborales para recibir las ortesis en tu centro.
+              Indica preferencias o necesidades de tus pacientes. También puedes solicitar soporte técnico. Plazo máximo estimado: 7 días laborales para recibir las ortesis en tu centro.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -74,7 +74,7 @@ export default function Lab() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold shadow-xl flex items-center gap-2 w-fit"
             >
-              Solicitar Informacion
+              Solicitar Información
               <span className="text-lg">›</span>
             </motion.button>
             <motion.a

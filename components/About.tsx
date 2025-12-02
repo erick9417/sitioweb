@@ -4,20 +4,20 @@ import { useRef } from "react";
 
 const blocks = [
   {
-    title: "Conocenos",
-    text: "Lucvan es una linea de productos ortopedicos con amplia experiencia en confeccion de plantillas. Ayudamos a profesionales a optimizar tiempo con procesos claros y materiales certificados de primera calidad.",
+    title: "Conócenos",
+    text: "Lucvan es una línea de productos ortopédicos con amplia experiencia en confección de plantillas. Ayudamos a profesionales a optimizar tiempo con procesos claros y materiales certificados de primera calidad.",
   },
   {
     title: "En la actualidad",
-    text: "Fabricamos mas de 95K pares de plantillas al ano con presencia en Europa y America. Ampliamos catalogo a ortesis de miembro inferior, superior y tronco.",
+    text: "Fabricamos más de 95K pares de plantillas al año con presencia en Europa y América. Ampliamos catálogo a ortesis de miembro inferior, superior y tronco.",
   },
   {
     title: "Expertos en Ortopedia",
-    text: "El pie sustenta el aparato locomotor. Nuestro conocimiento del mercado y la confianza de clientes impulsa la expansion de nuevas gamas ortopedicas.",
+    text: "El pie sustenta el aparato locomotor. Nuestro conocimiento del mercado y la confianza de clientes impulsan la expansión de nuevas gamas ortopédicas.",
   },
   {
     title: "Calidad Certificada",
-    text: "Celebrando 30 anos certificamos procesos segun ISO 13845, garantizando estandares altos para productos sanitarios y consistencia productiva.",
+    text: "Celebrando 30 años, certificamos procesos según ISO 13485, garantizando estándares altos para productos sanitarios y consistencia productiva.",
   },
 ];
 
@@ -34,12 +34,12 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-4"
         >
-          <span className="inline-block text-sm font-semibold tracking-wide bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">30+ ANOS RESPALDANDO LA SALUD DEL PIE</span>
+          <span className="inline-block text-sm font-semibold tracking-wide bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">30+ AÑOS RESPALDANDO LA SALUD DEL PIE</span>
           <h2 className="text-4xl sm:text-5xl font-bold text-white">
             Historia y Compromiso
           </h2>
           <p className="max-w-3xl mx-auto text-slate-300 text-sm sm:text-base leading-relaxed">
-            Trayectoria construida sobre innovacion, calidad y soporte constante a profesionales de ortopedia y podologia.
+            Trayectoria construida sobre innovación, calidad y soporte constante a profesionales de ortopedia y podología.
           </p>
         </motion.div>
 
@@ -66,9 +66,9 @@ export default function About() {
           className="flex flex-col md:flex-row items-center justify-between gap-8 rounded-3xl bg-slate-900/70 border border-slate-700/60 p-10"
         >
           <div className="space-y-3 max-w-xl">
-            <h3 className="text-2xl font-bold text-white">Innovacion, Flexibilidad y Calidad</h3>
+            <h3 className="text-2xl font-bold text-white">Innovación, Flexibilidad y Calidad</h3>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Combinamos tecnologia y experiencia para mejorar la calidad de vida de pacientes y potenciar el trabajo especializado en cada consulta.
+              Combinamos tecnología y experiencia para mejorar la calidad de vida de pacientes y potenciar el trabajo especializado en cada consulta.
             </p>
           </div>
           <motion.a

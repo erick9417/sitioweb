@@ -51,7 +51,7 @@ export default function Features() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
-              Por que elegirnos?
+              ¿Por qué elegirnos?
             </span>
           </motion.h2>
           <motion.p
@@ -60,7 +60,7 @@ export default function Features() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Calidad premium respaldada por innovacion y experiencia
+            Calidad premium respaldada por innovación y experiencia
           </motion.p>
         </motion.div>
 

@@ -60,7 +60,7 @@ export default function Testimonials() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Miles de personas confian en nosotros cada dia
+            Miles de personas confían en nosotros cada día
           </motion.p>
         </motion.div>
 
