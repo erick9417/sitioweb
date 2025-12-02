@@ -23,7 +23,7 @@ export default function Navbar() {
             <div className="relative w-24 h-24">
               <Image
                 src="/plantillas/lucvan-logo-web.png"
-                alt="Lucvan Logo"
+                alt="Lucván Logo"
                 fill
                 className="object-contain"
                 priority
@@ -46,7 +46,7 @@ export default function Navbar() {
               Contacto
             </a>
             <a href="#lab" className="text-slate-300 hover:text-white transition-colors font-medium">
-              Lucvan LAB
+              Lucván LAB
             </a>
           </div>
 

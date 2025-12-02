@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function WhatsAppFloat() {
   const phone = "50663819141";
-  const text = encodeURIComponent("Hola, necesito más información sobre las plantillas Lucvan.");
+  const text = encodeURIComponent("Hola, necesito más información sobre las plantillas Lucván.");
   const href = `https://wa.me/${phone}?text=${text}`;
 
   return (

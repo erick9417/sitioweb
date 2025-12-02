@@ -236,7 +236,7 @@ export default function Contact() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <p>&copy; 2025 LucvanLATAM. Todos los derechos reservados.</p>
+          <p>&copy; 2025 LucvánLATAM. Todos los derechos reservados.</p>
         </motion.div>
       </div>
 

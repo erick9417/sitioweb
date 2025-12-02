@@ -13,7 +13,7 @@ Sitio web moderno y premium para plantillas ortopédicas, diseñado con las últ
 ### Secciones Implementadas
 1. **Sección Principal**: Presentación impactante con carrusel de plantillas
 2. **Características**: Características destacadas con iconos animados
-3. **LucvanLab**: Central de fabricación a medida con sistema de pedidos
+3. **LucvánLab**: Central de fabricación a medida con sistema de pedidos
 4. **Quiénes Somos**: Historia y compromiso de 30+ años
 5. **Beneficios**: Beneficios premium con estadísticas animadas
 6. **Testimonios**: Testimonios de clientes con diseño moderno
@@ -77,7 +77,7 @@ sitioweb/
 ├── components/
 │   ├── Hero.tsx            # Carrusel de plantillas
 │   ├── Features.tsx        # Características
-│   ├── Lab.tsx             # LucvanLab fabricación
+│   ├── Lab.tsx             # LucvánLab fabricación
 │   ├── About.tsx           # Quiénes Somos
 │   ├── Benefits.tsx        # Beneficios
 │   ├── Testimonials.tsx    # Testimonios
@@ -107,7 +107,7 @@ sitioweb/
 
 1. ✅ **Imágenes reales**: Plantillas Sport, Pronación, Soporte, Fascitis y Lab
 2. ✅ **WhatsApp Integration**: Formulario conectado y botón flotante (+506 6381 9141)
-3. ✅ **Sistema LucvanLab**: Portal de fabricación con inicio de sesión (sistema.lucvanlatam.com)
+3. ✅ **Sistema LucvánLab**: Portal de fabricación con inicio de sesión (sistema.lucvanlatam.com)
 4. ✅ **Navegación optimizada**: Enlaces a secciones Lab, Quiénes Somos, Beneficios, Testimonios
 5. ✅ **Carrusel Hero**: Auto-avance cada 8s con navegación manual y animaciones suaves
 6. ✅ **SEO y accesibilidad**: Metadata optimizada y etiquetas ARIA

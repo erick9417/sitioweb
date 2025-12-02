@@ -39,7 +39,7 @@ export default function Lab() {
             <div className="relative w-[760px] h-[420px] md:w-[860px] md:h-[470px] lg:w-[940px] lg:h-[520px] z-10">
               <Image
                 src="/plantillas/Lab.png"
-                alt="Lucvan Lab"
+                alt="Lucván Lab"
                 fill
                 unoptimized
                 className="object-contain drop-shadow-[0_32px_64px_rgba(0,0,0,0.65)] saturate-125 contrast-115 brightness-110"
@@ -55,7 +55,7 @@ export default function Lab() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="space-y-10"
         >
-          <span className="inline-block text-2xl sm:text-3xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(34,211,238,0.35)]">LucvanLab</span>
+          <span className="inline-block text-2xl sm:text-3xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(34,211,238,0.35)]">LucvánLab</span>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
             <span className="block text-white">Central de Fabricación</span>
             <span className="block bg-gradient-to-r from-purple-200 via-pink-200 to-cyan-200 bg-clip-text text-transparent">a Medida</span>

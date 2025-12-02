@@ -5,7 +5,7 @@ import { useRef } from "react";
 const blocks = [
   {
     title: "Conócenos",
-    text: "Lucvan es una línea de productos ortopédicos con amplia experiencia en confección de plantillas. Ayudamos a profesionales a optimizar tiempo con procesos claros y materiales certificados de primera calidad.",
+    text: "Lucván es una línea de productos ortopédicos con amplia experiencia en confección de plantillas. Ayudamos a profesionales a optimizar tiempo con procesos claros y materiales certificados de primera calidad.",
   },
   {
     title: "En la actualidad",
