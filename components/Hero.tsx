@@ -57,6 +57,23 @@ export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const [key, setKey] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload all images
+  useEffect(() => {
+    const imagePromises = plantillas.map((plantilla) => {
+      return new Promise((resolve, reject) => {
+        const img = new window.Image();
+        img.src = plantilla.imagen;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    });
+
+    Promise.all(imagePromises)
+      .then(() => setImagesLoaded(true))
+      .catch(() => setImagesLoaded(true)); // Continue even if some fail
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -81,7 +98,7 @@ export default function Hero() {
   const currentPlantilla = plantillas[currentIndex];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 scroll-mt-20">
+    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 scroll-mt-20">
       {/* Gradient Overlay */}
       <motion.div
         className={`absolute inset-0 bg-gradient-to-br ${currentPlantilla.gradiente} opacity-10`}
@@ -92,9 +109,9 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-16 items-center py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-16 items-center py-12 lg:py-20">
           {/* Text Content */}
-          <motion.div className="text-left relative min-h-[500px]" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div className="text-left relative min-h-[320px] sm:min-h-[400px] lg:min-h-[500px]" initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <AnimatePresence initial={false}>
               <motion.div key={currentIndex} custom={direction} variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.4, ease: "easeInOut" }} className="space-y-6 absolute top-0 left-0 right-0" style={{ willChange: 'auto' }}>
                 {/* Badge */}
@@ -114,19 +131,19 @@ export default function Hero() {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                  <motion.button className={`group px-6 py-3 bg-gradient-to-r ${currentPlantilla.gradiente} text-white rounded-full font-semibold text-base shadow-2xl shadow-purple-900/50 flex items-center justify-center gap-2 hover:shadow-purple-600/50 transition-all`} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <motion.a href="#contacto" className={`group px-6 py-3 bg-gradient-to-r ${currentPlantilla.gradiente} text-white rounded-full font-semibold text-base shadow-2xl shadow-purple-900/50 flex items-center justify-center gap-2 hover:shadow-purple-600/50 transition-all`} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Calendar className="w-4 h-4 group-hover:rotate-12 transition-transform" /> Agendar Consulta
-                  </motion.button>
-                  <motion.button className="px-6 py-3 bg-slate-800/80 backdrop-blur-sm text-white rounded-full font-semibold text-base shadow-xl border border-slate-700 hover:bg-slate-700 transition-all flex items-center justify-center gap-2" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  </motion.a>
+                  <motion.a href="https://maps.app.goo.gl/96uE91jw1hAfGE948" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-800/80 backdrop-blur-sm text-white rounded-full font-semibold text-base shadow-xl border border-slate-700 hover:bg-slate-700 transition-all flex items-center justify-center gap-2" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <MapPin className="w-4 h-4" /> Visitar Consultorio
-                  </motion.button>
+                  </motion.a>
                 </div>
               </motion.div>
             </AnimatePresence>
           </motion.div>
 
           {/* Image Content */}
-          <div className="relative h-[450px] lg:h-[550px] flex items-center justify-center">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[550px] flex items-center justify-center">
             <AnimatePresence initial={false}>
               <motion.div key={`image-${currentIndex}`} custom={direction} variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.4, ease: "easeInOut" }} className="absolute inset-0 flex items-center justify-center">
                 <motion.div className="relative w-full h-full flex items-center justify-center" whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
@@ -134,7 +151,7 @@ export default function Hero() {
                   <div className={`absolute inset-0 bg-gradient-to-r ${currentPlantilla.gradiente} opacity-20 blur-3xl rounded-full`}></div>
                   
                   {/* Image */}
-                  <div className="relative w-[480px] h-[480px] lg:w-[600px] lg:h-[600px] z-10">
+                  <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] lg:w-[600px] lg:h-[600px] z-10">
                     <Image 
                       src={currentPlantilla.imagen} 
                       alt={`Plantilla ${currentPlantilla.nombre}`} 

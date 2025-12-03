@@ -8,13 +8,13 @@ export default function Lab() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="lab" ref={ref} className="py-24 px-6 lg:px-10 bg-slate-950">
-      <div className="max-w-7xl mx-auto grid gap-16 lg:grid-cols-2 items-center">
+    <section id="lab" ref={ref} className="py-16 sm:py-24 px-6 lg:px-10 bg-slate-950">
+      <div className="max-w-7xl mx-auto grid gap-10 lg:gap-16 lg:grid-cols-2 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="relative w-full h-[600px] md:h-[640px] order-last lg:order-first"
+          className="relative w-full h-[400px] sm:h-[500px] md:h-[640px] order-last lg:order-first"
         >
           {/* Background vignette */}
           <div className="absolute inset-0 rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800" />
@@ -36,7 +36,7 @@ export default function Lab() {
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
           >
-            <div className="relative w-[760px] h-[420px] md:w-[860px] md:h-[470px] lg:w-[940px] lg:h-[520px] z-10">
+            <div className="relative w-full max-w-[600px] h-[350px] sm:w-[700px] sm:h-[400px] md:w-[860px] md:h-[470px] lg:w-[940px] lg:h-[520px] z-10">
               <Image
                 src="/plantillas/Lab.png"
                 alt="Lucván Lab"
@@ -53,10 +53,10 @@ export default function Lab() {
           initial={{ opacity: 0, x: 40 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="space-y-10"
+          className="space-y-6 sm:space-y-10"
         >
-          <span className="inline-block text-2xl sm:text-3xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(34,211,238,0.35)]">LucvánLab</span>
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight">
+          <span className="inline-block text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(34,211,238,0.35)]">LucvánLab</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight">
             <span className="block text-white">Central de Fabricación</span>
             <span className="block bg-gradient-to-r from-purple-200 via-pink-200 to-cyan-200 bg-clip-text text-transparent">a Medida</span>
           </h2>

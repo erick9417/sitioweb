@@ -1,0 +1,4 @@
+cd sitioweb
+rm -rf out
+put -r out
+bye

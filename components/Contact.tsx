@@ -127,61 +127,104 @@ export default function Contact() {
             </motion.div>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Contact Info - Reordenado: Ubicación, Teléfono, Email, Redes, Horario */}
           <motion.div
-            className="space-y-8"
+            className="space-y-6"
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            {/* Info Cards */}
-            {[
-              {
-                icon: MapPin,
-                title: "Visítanos",
-                content: "200m al oeste del Hospital San Rafael de Alajuela, Costa Rica",
-                color: "from-blue-400 to-cyan-500",
-              },
-              {
-                icon: Phone,
-                title: "Llámanos",
-                content: "(+506) 2430 4847 | 6096 1784",
-                color: "from-purple-400 to-pink-500",
-              },
-              {
-                icon: Mail,
-                title: "Escríbenos",
-                content: "info@lucvanlatam.com",
-                color: "from-pink-400 to-rose-500",
-              },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={index}
-                  className="flex items-start gap-4 group"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                >
-                  <motion.div
-                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center flex-shrink-0`}
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <Icon className="w-7 h-7 text-white" />
-                  </motion.div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                    <p className="text-purple-200">{item.content}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-
-            {/* Social Media */}
+            {/* 1. Ubicación con Mapa */}
             <motion.div
-              className="pt-8"
+              className="flex items-start gap-4 group"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <motion.div
+                className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center flex-shrink-0"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <MapPin className="w-7 h-7 text-white" />
+              </motion.div>
+              <div>
+                <h3 className="text-xl font-bold mb-1">Visítanos</h3>
+                <p className="text-purple-200 mb-3">200m al oeste del Hospital San Rafael de Alajuela, Costa Rica</p>
+                <motion.a
+                  href="https://maps.app.goo.gl/96uE91jw1hAfGE948"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg text-sm font-semibold hover:shadow-lg transition-shadow"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Ver en Google Maps
+                </motion.a>
+              </div>
+            </motion.div>
+
+            {/* Mapa embebido */}
+            <motion.div
+              className="rounded-2xl overflow-hidden border border-white/20 shadow-xl h-64"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.8967!2d-84.2185!3d10.0167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fb700f3c1d47%3A0x4e9f7c0f9f7c0f9f!2sHospital%20San%20Rafael%20de%20Alajuela!5e0!3m2!1ses!2scr!4v1733000000000!5m2!1ses!2scr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </motion.div>
+
+            {/* 2. Teléfono */}
+            <motion.div
+              className="flex items-start gap-4 group"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <motion.div
+                className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center flex-shrink-0"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Phone className="w-7 h-7 text-white" />
+              </motion.div>
+              <div>
+                <h3 className="text-xl font-bold mb-1">Llámanos</h3>
+                <p className="text-purple-200">(+506) 2430 4847 | 6096 1784</p>
+              </div>
+            </motion.div>
+
+            {/* 3. Email */}
+            <motion.div
+              className="flex items-start gap-4 group"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.7 }}
+            >
+              <motion.div
+                className="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center flex-shrink-0"
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Mail className="w-7 h-7 text-white" />
+              </motion.div>
+              <div>
+                <h3 className="text-xl font-bold mb-1">Escríbenos</h3>
+                <p className="text-purple-200">info@lucvanlatam.com</p>
+              </div>
+            </motion.div>
+
+            {/* 4. Redes Sociales */}
+            <motion.div
+              className="pt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.8 }}
@@ -211,12 +254,12 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* Hours */}
+            {/* 5. Horario */}
             <motion.div
               className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 1 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
               whileHover={{ boxShadow: "0 20px 40px -12px rgba(255, 255, 255, 0.2)" }}
             >
               <h3 className="text-xl font-bold mb-4">Horario de Atención</h3>

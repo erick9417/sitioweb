@@ -1,0 +1,4 @@
+cd sitioweb
+rm -rf .next
+put -r .next
+bye
