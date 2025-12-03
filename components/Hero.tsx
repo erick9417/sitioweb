@@ -98,7 +98,7 @@ export default function Hero() {
   const currentPlantilla = plantillas[currentIndex];
 
   return (
-    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 scroll-mt-20 pt-20 lg:pt-0">
+    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 scroll-mt-20 pt-16 lg:pt-0">
       {/* Gradient Overlay */}
       <motion.div
         className={`absolute inset-0 bg-gradient-to-br ${currentPlantilla.gradiente} opacity-10`}

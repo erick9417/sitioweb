@@ -16,15 +16,16 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        {/* Mobile: Logo centered on top */}
-        <div className="lg:hidden flex flex-col">
-          <div className="flex justify-center items-center py-1.5">
+        {/* Mobile: Logo and menu left, buttons right */}
+        <div className="lg:hidden flex items-center h-14 py-2">
+          {/* Logo y menú izquierda */}
+          <div className="flex items-center gap-2">
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="mx-auto"
+              className="flex-shrink-0"
             >
-              <div className="relative w-16 h-16">
+              <div className="relative w-24 h-24">
                 <Image
                   src="/plantillas/lucvan-logo-web.webp"
                   alt="Lucván Logo"
@@ -34,8 +35,7 @@ export default function Navbar() {
                 />
               </div>
             </motion.div>
-          </div>
-          <div className="flex items-center h-10 border-t border-slate-800/50 pr-2">
+
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-slate-300 hover:text-white transition-colors"
@@ -43,24 +43,28 @@ export default function Navbar() {
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-            <div className="flex-1"></div>
-            <div className="flex items-center gap-2">
-              <motion.a
-                href="/test"
-                className="px-3 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-full font-semibold text-xs shadow-lg transition-all"
-                whileTap={{ scale: 0.95 }}
-              >
-                Test
-              </motion.a>
-              <motion.a
-                href="#contacto"
-                className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-xs shadow-lg"
-                whileTap={{ scale: 0.95 }}
-              >
-                <Calendar className="w-3 h-3" />
-                Agendar
-              </motion.a>
-            </div>
+          </div>
+
+          {/* Spacer */}
+          <div className="flex-1"></div>
+
+          {/* Botones derecha */}
+          <div className="flex items-center gap-2">
+            <motion.a
+              href="/test"
+              className="px-3 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-full font-semibold text-xs shadow-lg transition-all"
+              whileTap={{ scale: 0.95 }}
+            >
+              Test
+            </motion.a>
+            <motion.a
+              href="#contacto"
+              className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-xs shadow-lg"
+              whileTap={{ scale: 0.95 }}
+            >
+              <Calendar className="w-3 h-3" />
+              Agendar
+            </motion.a>
           </div>
         </div>
 
@@ -71,7 +75,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="relative w-24 h-24">
+            <div className="relative w-24 h-20">
               <Image
                 src="/plantillas/lucvan-logo-web.webp"
                 alt="Lucván Logo"
