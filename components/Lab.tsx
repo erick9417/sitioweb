@@ -38,7 +38,7 @@ export default function Lab() {
           >
             <div className="relative w-full max-w-[600px] h-[350px] sm:w-[700px] sm:h-[400px] md:w-[860px] md:h-[470px] lg:w-[940px] lg:h-[520px] z-10">
               <Image
-                src="/plantillas/Lab.png"
+                src="/plantillas/Lab.webp"
                 alt="Lucván Lab"
                 fill
                 unoptimized
