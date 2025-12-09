@@ -13,7 +13,7 @@ export default function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
-      className="hidden lg:flex fixed bottom-5 right-5 z-50 items-center gap-3 rounded-full bg-gradient-to-r from-emerald-500 to-green-500 text-white shadow-xl px-5 py-3"
+      className="hidden lg:flex fixed bottom-5 right-5 z-50 items-center gap-3 rounded-full btn-primary shadow-xl px-5 py-3"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.05 }}

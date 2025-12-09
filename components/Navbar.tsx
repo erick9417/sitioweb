@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800/50"
+      className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -27,7 +27,7 @@ export default function Navbar() {
             >
               <div className="relative w-24 h-24">
                 <Image
-                  src="/plantillas/lucvan-logo-web.webp"
+                  src="/plantillas-optimized/lucvan-logo-web.webp"
                   alt="Lucván Logo"
                   fill
                   className="object-contain"
@@ -38,7 +38,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-slate-300 hover:text-white transition-colors"
+              className="p-2 text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -51,15 +51,15 @@ export default function Navbar() {
           {/* Botones derecha */}
           <div className="flex items-center gap-2">
             <motion.a
-              href="/test"
-              className="px-3 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-full font-semibold text-xs shadow-lg transition-all"
+              href="/test.html"
+              className="btn-primary px-3 py-1.5 text-xs shadow-lg transition-all"
               whileTap={{ scale: 0.95 }}
             >
               Test
             </motion.a>
             <motion.a
-              href="#contacto"
-              className="flex items-center gap-1 px-3 py-1.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold text-xs shadow-lg"
+              href="/#contacto"
+              className="btn-primary flex items-center gap-1 px-3 py-1.5 text-xs shadow-lg"
               whileTap={{ scale: 0.95 }}
             >
               <Calendar className="w-3 h-3" />
@@ -77,7 +77,7 @@ export default function Navbar() {
           >
             <div className="relative w-24 h-20">
               <Image
-                src="/plantillas/lucvan-logo-web.webp"
+                src="/plantillas-optimized/lucvan-logo-web.webp"
                 alt="Lucván Logo"
                 fill
                 className="object-contain"
@@ -87,19 +87,19 @@ export default function Navbar() {
           </motion.div>
 
           <div className="flex items-center gap-8">
-            <a href="#quienes" className="text-slate-300 hover:text-white transition-colors font-medium">
+            <a href="/#quienes" className="text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium">
               Quiénes Somos
             </a>
-            <a href="#beneficios" className="text-slate-300 hover:text-white transition-colors font-medium">
+            <a href="/#beneficios" className="text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium">
               Beneficios
             </a>
-            <a href="#testimonios" className="text-slate-300 hover:text-white transition-colors font-medium">
+            <a href="/#testimonios" className="text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium">
               Testimonios
             </a>
-            <a href="#contacto" className="text-slate-300 hover:text-white transition-colors font-medium">
+            <a href="/#contacto" className="text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium">
               Contacto
             </a>
-            <a href="#lab" className="text-slate-300 hover:text-white transition-colors font-medium">
+            <a href="/#lab" className="text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium">
               Lucván LAB
             </a>
           </div>
@@ -108,16 +108,16 @@ export default function Navbar() {
             <motion.a
               href="/test"
               aria-label="Test: ¿Es para mi?"
-              className="px-5 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all"
+              className="btn-primary px-5 py-2.5 text-sm shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Test: ¿Es para mi?
             </motion.a>
             <motion.a
-              href="#contacto"
+              href="/#contacto"
               aria-label="Agendar Cita"
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow"
+              className="btn-primary flex items-center gap-2 px-6 py-3 text-sm shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -136,41 +136,41 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-slate-900 border-t border-slate-800/50 overflow-hidden"
+            className="lg:hidden bg-white border-t border-slate-200 overflow-hidden"
           >
             <div className="px-4 py-4 space-y-2 max-h-[70vh] overflow-y-auto">
               <a
-                href="#quienes"
+                href="/#quienes"
                 onClick={() => setIsMenuOpen(false)}
-                className="block py-2 text-slate-300 hover:text-white transition-colors font-medium"
+                className="block py-2 text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium"
               >
                 Quiénes Somos
               </a>
               <a
-                href="#beneficios"
+                href="/#beneficios"
                 onClick={() => setIsMenuOpen(false)}
-                className="block py-2 text-slate-300 hover:text-white transition-colors font-medium"
+                className="block py-2 text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium"
               >
                 Beneficios
               </a>
               <a
-                href="#testimonios"
+                href="/#testimonios"
                 onClick={() => setIsMenuOpen(false)}
-                className="block py-2 text-slate-300 hover:text-white transition-colors font-medium"
+                className="block py-2 text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium"
               >
                 Testimonios
               </a>
               <a
-                href="#contacto"
+                href="/#contacto"
                 onClick={() => setIsMenuOpen(false)}
-                className="block py-2 text-slate-300 hover:text-white transition-colors font-medium"
+                className="block py-2 text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium"
               >
                 Contacto
               </a>
               <a
-                href="#lab"
+                href="/#lab"
                 onClick={() => setIsMenuOpen(false)}
-                className="block py-2 text-slate-300 hover:text-white transition-colors font-medium"
+                className="block py-2 text-[var(--color-primary-dark)] hover:text-[var(--color-primary)] transition-colors font-medium"
               >
                 Lucván LAB
               </a>

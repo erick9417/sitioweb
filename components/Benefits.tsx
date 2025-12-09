@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { Check, TrendingUp, Users, Award } from "lucide-react";
 
 const benefits = [
-  "Evaluación biomecánica completa sin costo",
+  "Evaluación biomecánica completa",
   "Diagnóstico personalizado por especialistas",
   "Ajustes y seguimiento incluidos",
   "Materiales hipoalergénicos certificados",
@@ -18,19 +18,19 @@ const stats = [
     icon: TrendingUp,
     value: "95%",
     label: "Mejora en postura",
-    color: "from-green-400 to-emerald-500",
+    color: "from-[#F5C400] to-[#FFD933]",
   },
   {
     icon: Users,
     value: "50K+",
     label: "Clientes activos",
-    color: "from-blue-400 to-cyan-500",
+    color: "from-[#0066A4] to-[#003C63]",
   },
   {
     icon: Award,
     value: "30+",
     label: "Años en el mercado",
-    color: "from-purple-500 to-pink-500",
+    color: "from-[#4FA9E8] to-[#0066A4]",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function Benefits() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="beneficios" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-950" ref={ref}>
+    <section id="beneficios" className="py-24 px-4 sm:px-6 lg:px-8 bg-[var(--color-light)]" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Benefits List */}
@@ -54,12 +54,10 @@ export default function Benefits() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
-                Tu Salud es Nuestra Prioridad
-              </span>
+              <span className="text-[var(--color-primary-dark)]">Tu Salud es Nuestra Prioridad</span>
             </motion.h2>
             <motion.p
-              className="text-xl text-slate-300 mb-10"
+              className="text-xl text-[rgba(51,51,51,0.85)] mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -77,14 +75,14 @@ export default function Benefits() {
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 >
                   <motion.div
-                    className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center"
+                    className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-accent)] flex items-center justify-center"
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <Check className="w-5 h-5 text-white" />
+                    <Check className="w-5 h-5 text-[var(--color-primary-dark)]" />
                   </motion.div>
                   <motion.p
-                    className="text-lg text-slate-200 pt-1"
+                    className="text-lg text-[var(--color-dark)] pt-1"
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
@@ -113,7 +111,7 @@ export default function Benefits() {
                   transition={{ duration: 0.6, delay: 0.5 + index * 0.2 }}
                 >
                   <motion.div
-                    className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 relative overflow-hidden"
+                    className="bg-white rounded-3xl p-8 shadow-xl border border-[rgba(0,60,99,0.08)] relative overflow-hidden"
                     whileHover={{ 
                       scale: 1.03,
                       boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" 
@@ -138,14 +136,14 @@ export default function Benefits() {
                       {/* Content */}
                       <div>
                         <motion.div
-                          className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2"
+                          className="text-5xl font-bold text-[var(--color-primary-dark)] mb-2"
                           initial={{ scale: 0 }}
                           animate={isInView ? { scale: 1 } : {}}
                           transition={{ delay: 0.7 + index * 0.2, type: "spring" }}
                         >
                           {stat.value}
                         </motion.div>
-                        <div className="text-slate-600 font-medium text-lg">
+                        <div className="text-[rgba(51,51,51,0.7)] font-medium text-lg">
                           {stat.label}
                         </div>
                       </div>

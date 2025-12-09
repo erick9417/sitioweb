@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paleta Lucván Salud */
+  --color-primary: #0066A4;
+  --color-primary-dark: #003C63;
+  --color-accent: #F5C400;
+  --color-light: #F4F6F8;
+  --color-dark: #333333;
+  --color-white: #FFFFFF;
+
+  --background: var(--color-light);
+  --foreground: var(--color-dark);
 }
 
 @theme inline {
@@ -16,6 +24,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-primary-dark);
 }
 
 /* Smooth Scrolling */
@@ -34,16 +48,43 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--color-light);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #9333ea, #ec4899);
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark));
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #7c3aed, #db2777);
+  background: linear-gradient(180deg, #0a7cc9, var(--color-primary-dark));
+}
+
+::selection {
+  color: var(--color-primary-dark);
+  background: #ffeaa0;
+}
+
+/* Botón primario unificado */
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  font-weight: 700;
+  box-shadow: 0 12px 24px -10px rgba(0, 60, 99, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #ffd933;
+  box-shadow: 0 16px 32px -12px rgba(0, 60, 99, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid rgba(0, 102, 164, 0.4);
+  outline-offset: 2px;
 }
 
 /* Animations */

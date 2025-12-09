@@ -9,25 +9,25 @@ const features = [
     icon: Zap,
     title: "Tecnología Avanzada",
     description: "Materiales de última generación que se adaptan perfectamente a tu pisada.",
-    color: "from-yellow-400 to-orange-500",
+    color: "from-[#F5C400] to-[#FFD933]",
   },
   {
     icon: Shield,
     title: "Máxima Durabilidad",
     description: "Diseñadas para resistir el uso intensivo manteniendo sus propiedades.",
-    color: "from-blue-400 to-cyan-500",
+    color: "from-[#0066A4] to-[#003C63]",
   },
   {
     icon: Heart,
     title: "Confort Premium",
     description: "Experiencia de uso superior que cuida tu salud postural cada día.",
-    color: "from-pink-400 to-rose-500",
+    color: "from-[#4FA9E8] to-[#0066A4]",
   },
   {
     icon: Sparkles,
     title: "Diseño Personalizado",
     description: "Adaptamos cada plantilla a tus necesidades específicas y anatomía única.",
-    color: "from-purple-400 to-indigo-500",
+    color: "from-[#003C63] to-[#0066A4]",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function Features() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="caracteristicas" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-slate-950" ref={ref}>
+    <section id="caracteristicas" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[var(--color-light)]" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -50,12 +50,10 @@ export default function Features() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent">
-              ¿Por qué elegirnos?
-            </span>
+            <span className="text-[var(--color-primary-dark)]">¿Por qué elegirnos?</span>
           </motion.h2>
           <motion.p
-            className="text-xl text-slate-300 max-w-2xl mx-auto"
+            className="text-xl text-[rgba(51,51,51,0.8)] max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -95,16 +93,16 @@ export default function Features() {
                   </motion.div>
 
                   {/* Content */}
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 relative z-10">
+                  <h3 className="text-2xl font-bold text-[var(--color-primary-dark)] mb-4 relative z-10">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed relative z-10">
+                  <p className="text-[rgba(51,51,51,0.75)] leading-relaxed relative z-10">
                     {feature.description}
                   </p>
 
                   {/* Decorative Element */}
                   <motion.div
-                    className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br from-purple-100 to-pink-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#E6F1F8] to-[#FFF4C2] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     animate={{
                       scale: [1, 1.2, 1],
                     }}

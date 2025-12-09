@@ -10,7 +10,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950">
+    <main className="min-h-screen bg-[var(--color-light)] text-[var(--color-dark)]">
       <Navbar />
       <Hero />
       <Features />

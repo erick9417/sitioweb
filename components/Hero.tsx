@@ -22,7 +22,7 @@ const plantillas: Plantilla[] = [
       "Diseñado para deportistas que buscan máximo soporte y absorción de impacto en actividades de alta intensidad.",
     imagen: "/plantillas/Sport.webp",
     contexto: "Ideal para corredores, atletas y deportistas activos",
-    gradiente: "from-orange-500 via-red-500 to-pink-500",
+    gradiente: "from-[#0066A4] via-[#005889] to-[#003C63]",
   },
   {
     nombre: "Pronación",
@@ -31,7 +31,7 @@ const plantillas: Plantilla[] = [
       "Especializadas en corregir la pronación del pie, mejorando tu postura y eliminando dolores articulares.",
     imagen: "/plantillas/Pronacion.webp",
     contexto: "Para quienes necesitan corrección de pisada",
-    gradiente: "from-blue-500 via-cyan-500 to-teal-500",
+    gradiente: "from-[#4FA9E8] via-[#0066A4] to-[#003C63]",
   },
   {
     nombre: "Soporte",
@@ -40,7 +40,7 @@ const plantillas: Plantilla[] = [
       "Máximo confort para uso diario prolongado. Perfectas para largas jornadas laborales y caminatas extensas.",
     imagen: "/plantillas/Soporte.webp",
     contexto: "Confort superior para el día a día",
-    gradiente: "from-purple-500 via-indigo-500 to-blue-500",
+    gradiente: "from-[#7FC4F2] via-[#4FA9E8] to-[#0066A4]",
   },
   {
     nombre: "Fascitis",
@@ -49,7 +49,7 @@ const plantillas: Plantilla[] = [
       "Diseño ortopédico específico para tratar y prevenir la fascitis plantar y dolores en el talón.",
     imagen: "/plantillas/Fascitis.webp",
     contexto: "Solución para dolor de talón y fascitis",
-    gradiente: "from-emerald-500 via-green-500 to-teal-500",
+    gradiente: "from-[#8FD4F6] via-[#4FA9E8] to-[#0066A4]",
   },
 ];
 
@@ -98,7 +98,7 @@ export default function Hero() {
   const currentPlantilla = plantillas[currentIndex];
 
   return (
-    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 scroll-mt-20 pt-16 lg:pt-0">
+    <section className="relative min-h-[85vh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-[var(--color-light)] scroll-mt-20 pt-16 lg:pt-0">
       {/* Gradient Overlay */}
       <motion.div
         className={`absolute inset-0 bg-gradient-to-br ${currentPlantilla.gradiente} opacity-10`}
@@ -113,19 +113,19 @@ export default function Hero() {
         <div className="lg:hidden flex flex-col gap-4 py-8">
           <div className="space-y-4">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-slate-800/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-purple-500/30 shadow-lg shadow-purple-900/30">
-              <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600"></div>
-              <span className="text-xs font-semibold text-purple-300">{currentPlantilla.tipo}</span>
+            <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[rgba(0,102,164,0.18)] shadow-sm">
+              <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"></div>
+              <span className="text-xs font-semibold text-[var(--color-primary-dark)]">{currentPlantilla.tipo}</span>
             </div>
 
             {/* Title */}
             <h1 className="font-bold leading-tight">
-              <span className="block text-white text-xl mb-1">Plantillas</span>
+              <span className="block text-[var(--color-primary-dark)] text-xl mb-1">Plantillas</span>
               <span className={`block text-5xl bg-gradient-to-r ${currentPlantilla.gradiente} bg-clip-text text-transparent`}>{currentPlantilla.nombre}</span>
             </h1>
 
             {/* Description */}
-            <p className="text-sm text-slate-300 leading-relaxed">{currentPlantilla.descripcion}</p>
+            <p className="text-sm text-[rgba(51,51,51,0.8)] leading-relaxed">{currentPlantilla.descripcion}</p>
 
               {/* Image */}
               <div className="relative h-[280px] flex items-center justify-center">
@@ -143,16 +143,16 @@ export default function Hero() {
                 </div>
                 {/* Navigation Arrows Mobile */}
                 <button
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-slate-800/90 backdrop-blur-md rounded-full shadow-xl border border-slate-700/50 flex items-center justify-center z-20"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/95 backdrop-blur-md rounded-full shadow-lg border border-[rgba(0,60,99,0.18)] flex items-center justify-center z-20"
                   onClick={() => paginate(-1)}
                 >
-                  <ChevronLeft className="w-5 h-5 text-white" />
+                  <ChevronLeft className="w-5 h-5 text-[var(--color-primary-dark)]" />
                 </button>
                 <button
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-slate-800/90 backdrop-blur-md rounded-full shadow-xl border border-slate-700/50 flex items-center justify-center z-20"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/95 backdrop-blur-md rounded-full shadow-lg border border-[rgba(0,60,99,0.18)] flex items-center justify-center z-20"
                   onClick={() => paginate(1)}
                 >
-                  <ChevronRight className="w-5 h-5 text-white" />
+                  <ChevronRight className="w-5 h-5 text-[var(--color-primary-dark)]" />
                 </button>
               </div>
 
@@ -160,7 +160,7 @@ export default function Hero() {
             <div className="flex flex-col gap-3 max-w-sm ml-8">
                 <motion.a
                   href="#contacto"
-                  className={`px-6 py-3 bg-gradient-to-r ${currentPlantilla.gradiente} text-white rounded-full font-semibold text-sm shadow-2xl flex items-center justify-center gap-2`}
+                  className="btn-primary px-6 py-3 text-sm shadow-lg flex items-center justify-center gap-2"
                   whileTap={{ scale: 0.95 }}
                 >
                   <Calendar className="w-4 h-4" /> Agendar Consulta
@@ -169,7 +169,7 @@ export default function Hero() {
                   href="https://maps.app.goo.gl/96uE91jw1hAfGE948"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-slate-800/80 backdrop-blur-sm text-white rounded-full font-semibold text-sm shadow-xl border border-slate-700 flex items-center justify-center gap-2"
+                  className="px-6 py-3 rounded-full border border-[var(--color-primary)] text-[var(--color-primary-dark)] bg-[var(--color-white)] hover:bg-[var(--color-light)] font-semibold text-sm shadow-md flex items-center justify-center gap-2 transition-colors"
                   whileTap={{ scale: 0.95 }}
                 >
                   <MapPin className="w-4 h-4" /> Visitar Consultorio
@@ -182,7 +182,7 @@ export default function Hero() {
             {plantillas.map((_, index) => (
               <button
                 key={index}
-                className={`h-2 rounded-full transition-all ${index === currentIndex ? "w-10 bg-gradient-to-r from-purple-600 to-pink-600" : "w-2 bg-slate-600"}`}
+                className={`h-2 rounded-full transition-all ${index === currentIndex ? "w-10 bg-[var(--color-primary)]" : "w-2 bg-slate-300"}`}
                 onClick={() => {
                   setDirection(index > currentIndex ? 1 : -1);
                   setCurrentIndex(index);
@@ -199,26 +199,26 @@ export default function Hero() {
             <AnimatePresence initial={false}>
               <motion.div key={currentIndex} custom={direction} variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: 0.4, ease: "easeInOut" }} className="space-y-6 absolute top-0 left-0 right-0" style={{ willChange: 'auto' }}>
                 {/* Badge */}
-                <div className="inline-flex items-center gap-2 bg-slate-800/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-purple-500/30 shadow-lg shadow-purple-900/30">
-                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600"></div>
-                  <span className="text-xs font-semibold text-purple-300">{currentPlantilla.tipo}</span>
+                <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full border border-[rgba(0,102,164,0.18)] shadow-sm">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"></div>
+                  <span className="text-xs font-semibold text-[var(--color-primary-dark)]">{currentPlantilla.tipo}</span>
                 </div>
 
                 {/* Title */}
                 <h1 className="font-bold leading-tight">
-                  <span className="block text-white text-lg sm:text-2xl lg:text-4xl mb-1 lg:mb-2">Plantillas</span>
+                  <span className="block text-[var(--color-primary-dark)] text-lg sm:text-2xl lg:text-4xl mb-1 lg:mb-2">Plantillas</span>
                   <span className={`block text-3xl sm:text-5xl lg:text-8xl bg-gradient-to-r ${currentPlantilla.gradiente} bg-clip-text text-transparent`}>{currentPlantilla.nombre}</span>
                 </h1>
 
                 {/* Description */}
-                <p className="text-base text-slate-300 leading-relaxed max-w-xl">{currentPlantilla.descripcion}</p>
+                <p className="text-base text-[rgba(51,51,51,0.85)] leading-relaxed max-w-xl">{currentPlantilla.descripcion}</p>
 
                 {/* CTA Buttons Desktop */}
                 <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                  <motion.a href="#contacto" className={`group px-6 py-3 bg-gradient-to-r ${currentPlantilla.gradiente} text-white rounded-full font-semibold text-base shadow-2xl shadow-purple-900/50 flex items-center justify-center gap-2 hover:shadow-purple-600/50 transition-all`} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <motion.a href="#contacto" className={`group btn-primary px-6 py-3 text-base shadow-lg flex items-center justify-center gap-2 transition-all`} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Calendar className="w-4 h-4 group-hover:rotate-12 transition-transform" /> Agendar Consulta
                   </motion.a>
-                  <motion.a href="https://maps.app.goo.gl/96uE91jw1hAfGE948" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-800/80 backdrop-blur-sm text-white rounded-full font-semibold text-base shadow-xl border border-slate-700 hover:bg-slate-700 transition-all flex items-center justify-center gap-2" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <motion.a href="https://maps.app.goo.gl/96uE91jw1hAfGE948" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-full border border-[var(--color-primary)] text-[var(--color-primary-dark)] bg-[var(--color-white)] hover:bg-[var(--color-light)] font-semibold text-base shadow-md transition-all flex items-center justify-center gap-2" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <MapPin className="w-4 h-4" /> Visitar Consultorio
                   </motion.a>
                 </div>
@@ -249,18 +249,18 @@ export default function Hero() {
             </div>
 
             {/* Navigation Arrows */}
-            <motion.button className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-slate-800/90 backdrop-blur-md rounded-full shadow-xl border border-slate-700/50 flex items-center justify-center z-20 hover:bg-slate-700 transition-colors" onClick={() => paginate(-1)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-              <ChevronLeft className="w-6 h-6 text-white" />
+            <motion.button className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/95 backdrop-blur-md rounded-full shadow-lg border border-[rgba(0,60,99,0.18)] flex items-center justify-center z-20 hover:bg-[var(--color-light)] transition-colors" onClick={() => paginate(-1)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <ChevronLeft className="w-6 h-6 text-[var(--color-primary-dark)]" />
             </motion.button>
-            <motion.button className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-slate-800/90 backdrop-blur-md rounded-full shadow-xl border border-slate-700/50 flex items-center justify-center z-20 hover:bg-slate-700 transition-colors" onClick={() => paginate(1)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-              <ChevronRight className="w-6 h-6 text-white" />
+            <motion.button className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/95 backdrop-blur-md rounded-full shadow-lg border border-[rgba(0,60,99,0.18)] flex items-center justify-center z-20 hover:bg-[var(--color-light)] transition-colors" onClick={() => paginate(1)} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <ChevronRight className="w-6 h-6 text-[var(--color-primary-dark)]" />
             </motion.button>
           </div>
 
           {/* Dots Navigation Desktop */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
             {plantillas.map((_, index) => (
-              <motion.button key={index} className={`h-2 rounded-full transition-all ${index === currentIndex ? "w-10 bg-gradient-to-r from-purple-600 to-pink-600 shadow-lg shadow-purple-600/50" : "w-2 bg-slate-600 hover:bg-slate-500"}`} onClick={() => { setDirection(index > currentIndex ? 1 : -1); setCurrentIndex(index); }} whileHover={{ scale: 1.2 }} />
+              <motion.button key={index} className={`h-2 rounded-full transition-all ${index === currentIndex ? "w-10 bg-[var(--color-primary)] shadow-lg shadow-[rgba(0,60,99,0.25)]" : "w-2 bg-slate-300 hover:bg-slate-400"}`} onClick={() => { setDirection(index > currentIndex ? 1 : -1); setCurrentIndex(index); }} whileHover={{ scale: 1.2 }} />
             ))}
           </div>
         </div>

@@ -17,7 +17,7 @@ const blocks = [
   },
   {
     title: "Calidad Certificada",
-    text: "Celebrando 30 años, certificamos procesos según ISO 13485, garantizando estándares altos para productos sanitarios y consistencia productiva.",
+    text: "Celebrando 30 años, garantizando estándares altos para productos sanitarios y consistencia productiva.",
   },
 ];
 
@@ -26,7 +26,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="quienes" ref={ref} className="py-24 px-6 lg:px-10 bg-slate-950">
+    <section id="quienes" ref={ref} className="py-24 px-6 lg:px-10 bg-[var(--color-light)]">
       <div className="max-w-7xl mx-auto space-y-14">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -34,11 +34,11 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-4"
         >
-          <span className="inline-block text-sm font-semibold tracking-wide bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">30+ AÑOS RESPALDANDO LA SALUD DEL PIE</span>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white">
+          <span className="inline-block text-sm font-semibold tracking-wide text-[var(--color-primary)]">30+ AÑOS RESPALDANDO</span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[var(--color-primary-dark)]">
             Historia y Compromiso
           </h2>
-          <p className="max-w-3xl mx-auto text-slate-300 text-sm sm:text-base leading-relaxed">
+          <p className="max-w-3xl mx-auto text-[rgba(51,51,51,0.8)] text-sm sm:text-base leading-relaxed">
             Trayectoria construida sobre innovación, calidad y soporte constante a profesionales de ortopedia y podología.
           </p>
         </motion.div>
@@ -50,11 +50,11 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.15 * i }}
-              className="group p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700/60 shadow-xl relative overflow-hidden"
+              className="group p-8 rounded-3xl bg-[var(--color-white)] border border-[rgba(0,60,99,0.12)] shadow-lg relative overflow-hidden"
             >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-500" />
-              <h3 className="text-xl font-semibold mb-3 text-white">{b.title}</h3>
-              <p className="text-slate-300 text-sm leading-relaxed">{b.text}</p>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity bg-gradient-to-r from-[#0066A4] via-[#4FA9E8] to-[#F5C400]" />
+              <h3 className="text-xl font-semibold mb-3 text-[var(--color-primary-dark)]">{b.title}</h3>
+              <p className="text-[rgba(51,51,51,0.75)] text-sm leading-relaxed">{b.text}</p>
             </motion.div>
           ))}
         </div>
