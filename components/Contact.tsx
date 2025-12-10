@@ -5,14 +5,26 @@ import { Send, MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from "l
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", isProvider: false });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Por favor, completa todos los campos");
+      return;
+    }
+
+    setIsSubmitting(true);
     const phone = "50663819141";
-    const text = `Hola, soy ${formData.name || "[Sin nombre]"}.\nEmail: ${formData.email || "[Sin email]"}.\n\nMensaje: ${formData.message || "[Sin mensaje]"}.\n\nEnviado desde lucvanlatam.com`;
+    const providerText = formData.isProvider ? "\n👨‍💼 *Interesado en ser proveedor*" : "";
+    const text = `Hola, soy ${formData.name}.\nEmail: ${formData.email}.\n\nMensaje: ${formData.message}${providerText}\n\nEnviado desde lucvanlatam.com`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
+    
+    // Reset form
+    setFormData({ name: "", email: "", message: "", isProvider: false });
+    setIsSubmitting(false);
   };
 
   return (
@@ -109,13 +121,27 @@ export default function Contact() {
                   />
                 </div>
 
+                <div className="flex items-center gap-3 py-2">
+                  <input
+                    type="checkbox"
+                    id="isProvider"
+                    className="w-5 h-5 rounded cursor-pointer accent-[var(--color-primary)]"
+                    checked={formData.isProvider}
+                    onChange={(e) => setFormData({ ...formData, isProvider: e.target.checked })}
+                  />
+                  <label htmlFor="isProvider" className="text-sm text-[var(--color-dark)] cursor-pointer font-medium">
+                    ¿Deseas ser proveedor de LucVan?
+                  </label>
+                </div>
+
                 <motion.button
                   type="submit"
-                  className="w-full py-4 btn-primary rounded-xl font-semibold text-lg flex items-center justify-center gap-2 group"
-                  whileHover={{ scale: 1.02, boxShadow: "0 20px 40px -12px rgba(0, 60, 99, 0.35)" }}
-                  whileTap={{ scale: 0.98 }}
+                  disabled={isSubmitting}
+                  className="w-full py-4 btn-primary rounded-xl font-semibold text-lg flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={!isSubmitting ? { scale: 1.02, boxShadow: "0 20px 40px -12px rgba(0, 60, 99, 0.35)" } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 >
-                  Enviar Mensaje
+                  {isSubmitting ? "Abriendo WhatsApp..." : "Enviar Mensaje"}
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
                 <p className="text-xs text-[rgba(51,51,51,0.6)] text-center">Se abrirá WhatsApp con tu mensaje prellenado.</p>

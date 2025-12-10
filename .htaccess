@@ -1,0 +1,32 @@
+# Desabilitar cache para archivos HTML
+<FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</FilesMatch>
+
+# Cache para archivos estáticos (_next)
+<FilesMatch "\.(js|css|woff2|webp|png|jpg|jpeg|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
+
+# Rewrite rules para Next.js
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    
+    # NO reescribir archivos o directorios existentes
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+    
+    # Reescribir /test a test.html
+    RewriteRule ^test/?$ test.html [L]
+    
+    # NO reescribir rutas que comiencen con _next
+    RewriteCond %{REQUEST_URI} !^/_next
+    
+    # Reescribir todo lo demás a index.html
+    RewriteRule ^(.*)$ index.html [L]
+</IfModule>
+
