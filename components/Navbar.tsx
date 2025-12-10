@@ -1,7 +1,4 @@
-"use client";
-
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { Calendar, Menu, X } from "lucide-react";
 import { useState } from "react";
 
@@ -25,15 +22,11 @@ export default function Navbar() {
               transition={{ type: "spring", stiffness: 300 }}
               className="flex-shrink-0"
             >
-              <div className="relative w-24 h-24">
-                <Image
-                  src="/plantillas-optimized/lucvan-logo-web.webp"
-                  alt="Lucván Logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+              <img
+                src="/plantillas-optimized/lucvan-logo-web.webp"
+                alt="Lucván Logo"
+                className="object-contain w-full h-full"
+              />
             </motion.div>
 
             <button
@@ -75,15 +68,11 @@ export default function Navbar() {
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="relative w-24 h-20">
-              <Image
+              <img
                 src="/plantillas-optimized/lucvan-logo-web.webp"
                 alt="Lucván Logo"
-                fill
-                className="object-contain"
-                priority
+                className="object-contain w-full h-full"
               />
-            </div>
           </motion.div>
 
           <div className="flex items-center gap-8">

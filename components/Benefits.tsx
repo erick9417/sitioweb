@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, TrendingUp, Users, Award } from "lucide-react";

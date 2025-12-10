@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Zap, Shield, Heart, Sparkles } from "lucide-react";

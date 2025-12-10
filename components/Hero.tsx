@@ -1,9 +1,6 @@
-"use client";
-
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { useState, useEffect } from "react";
-import Image from "next/image";
+import { Calendar, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 
 type Plantilla = {
   nombre: string;
@@ -131,15 +128,11 @@ export default function Hero() {
               <div className="relative h-[280px] flex items-center justify-center">
                 <div className={`absolute inset-0 bg-gradient-to-r ${currentPlantilla.gradiente} opacity-20 blur-3xl rounded-full`}></div>
                 <div className="relative w-[260px] h-[260px] z-10">
-                  <Image
-                    src={plantillas[currentIndex].imagen}
-                    alt={`Plantilla ${plantillas[currentIndex].nombre}`}
-                    width={260}
-                    height={260}
-                    className="w-full h-full object-contain drop-shadow-2xl"
-                    priority
-                    unoptimized
-                  />
+                <img
+                  src={plantillas[currentIndex].imagen}
+                  alt={`Plantilla ${plantillas[currentIndex].nombre}`}
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                />
                 </div>
                 {/* Navigation Arrows Mobile */}
                 <button
@@ -235,14 +228,10 @@ export default function Hero() {
                 
                 {/* Single Image element to avoid multiple requests */}
                 <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] lg:w-[600px] lg:h-[600px] z-10">
-                  <Image
+                  <img
                     src={plantillas[currentIndex].imagen}
                     alt={`Plantilla ${plantillas[currentIndex].nombre}`}
-                    width={600}
-                    height={600}
                     className="w-full h-full object-contain drop-shadow-2xl"
-                    priority
-                    unoptimized
                   />
                 </div>
               </div>
@@ -266,20 +255,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Hidden preload images to force browser cache */}
-      <div className="hidden">
-        {plantillas.map((plantilla, index) => (
-          <Image
-            key={index}
-            src={plantilla.imagen}
-            alt={plantilla.nombre}
-            width={600}
-            height={600}
-            priority
-            unoptimized
-          />
-        ))}
-      </div>
+
     </section>
   );
 }

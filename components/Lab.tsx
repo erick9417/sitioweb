@@ -1,6 +1,4 @@
-"use client";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
 
 export default function Lab() {
@@ -36,16 +34,11 @@ export default function Lab() {
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
           >
-            <div className="relative w-full max-w-[600px] h-[350px] sm:w-[700px] sm:h-[400px] md:w-[860px] md:h-[470px] lg:w-[940px] lg:h-[520px] z-10">
-              <Image
-                src="/plantillas/Lab.webp"
-                alt="Lucván Lab"
-                fill
-                unoptimized
-                className="object-contain drop-shadow-[0_32px_64px_rgba(0,0,0,0.65)] saturate-125 contrast-115 brightness-110"
-                priority
-              />
-            </div>
+            <img
+              src="/plantillas/Lab.webp"
+              alt="Lucván Lab"
+              className="object-contain drop-shadow-[0_32px_64px_rgba(0,0,0,0.65)] saturate-125 contrast-115 brightness-110 w-full h-full"
+            />
           </motion.div>
         </motion.div>
 
