@@ -560,7 +560,7 @@ function Section1({ formData, onChange, validationErrors }: any) {
       </div>
 
       <QuestionRadio
-        label="¿Ha utilizado plantillas ortopédicas anteriormente?"
+        label="¿Ha utilizado plantillas previamente?"
         name="plantillasPrevias"
         value={formData.plantillasPrevias}
         onChange={onChange}
@@ -843,7 +843,7 @@ function Section5({ formData, onChange, validationErrors }: any) {
     <div className="space-y-6">
       <div>
         <h3 className="text-2xl font-bold mb-2" style={{ color: '#06b6d4' }}>Objetivos</h3>
-        <p className="text-slate-400 text-sm">¿Qué espera lograr con las plantillas ortopédicas?</p>
+        <p className="text-slate-400 text-sm">¿Qué espera lograr con las plantillas?</p>
       </div>
 
       <QuestionRadio

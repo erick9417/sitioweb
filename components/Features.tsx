@@ -1,7 +1,5 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { Zap, Shield, Heart, Sparkles } from "lucide-react";
 
 const features = [
@@ -32,65 +30,35 @@ const features = [
 ];
 
 export default function Features() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-
   return (
-    <section id="caracteristicas" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[var(--color-light)]" ref={ref}>
+    <section id="caracteristicas" className="py-24 px-4 sm:px-6 lg:px-8 relative bg-[var(--color-light)]">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.h2
-            className="text-5xl sm:text-6xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+        <div className="text-center mb-16 opacity-0 animate-[fadeInUp_0.8s_ease-out_forwards]">
+          <h2 className="text-5xl sm:text-6xl font-bold mb-6 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
             <span className="text-[var(--color-primary-dark)]">¿Por qué elegirnos?</span>
-          </motion.h2>
-          <motion.p
-            className="text-xl text-[rgba(51,51,51,0.8)] max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
+          </h2>
+          <p className="text-xl text-[rgba(51,51,51,0.8)] max-w-2xl mx-auto opacity-0 animate-[fadeInUp_0.8s_ease-out_0.3s_forwards]">
             Calidad premium respaldada por innovación y experiencia
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                className="relative group"
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="relative group opacity-0 animate-[fadeInUp_0.6s_ease-out_forwards]"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <motion.div
-                  className="h-full bg-white rounded-3xl p-8 shadow-xl border border-slate-100 relative overflow-hidden"
-                  whileHover={{ y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
+                <div className="h-full bg-white rounded-3xl p-8 shadow-xl border border-slate-100 relative overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300">
                   {/* Gradient Background on Hover */}
-                  <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
-                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
 
                   {/* Icon */}
-                  <motion.div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 relative z-10`}
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  >
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300`}>
                     <Icon className="w-8 h-8 text-white" />
-                  </motion.div>
+                  </div>
 
                   {/* Content */}
                   <h3 className="text-2xl font-bold text-[var(--color-primary-dark)] mb-4 relative z-10">
@@ -101,18 +69,9 @@ export default function Features() {
                   </p>
 
                   {/* Decorative Element */}
-                  <motion.div
-                    className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#E6F1F8] to-[#FFF4C2] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                    }}
-                  />
-                </motion.div>
-              </motion.div>
+                  <div className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br from-[#E6F1F8] to-[#FFF4C2] opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse" />
+                </div>
+              </div>
             );
           })}
         </div>

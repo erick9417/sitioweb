@@ -15,9 +15,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Plantillas Ortopédicas Premium | Bienestar y Confort",
-  description: "Descubre nuestras plantillas ortopédicas premium diseñadas con tecnología de vanguardia. Máximo confort, soporte superior y diseño personalizado.",
-  keywords: "plantillas ortopédicas, plantillas premium, salud postural, confort, bienestar",
+  title: "Plantillas Premium | Bienestar y Confort",
+  description: "Descubre nuestras plantillas premium diseñadas con tecnología de vanguardia. Máximo confort, soporte superior y diseño personalizado.",
+  keywords: "plantillas premium, salud postural, confort, bienestar",
 };
 
 export default function RootLayout({

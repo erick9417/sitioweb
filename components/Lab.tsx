@@ -1,21 +1,17 @@
 "use client";
-import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
 
 export default function Lab() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const handleDistributorClick = () => {
+    const phone = "50663819141";
+    const text = "Hola, quiero ser distribuidor de Lucván. Por favor contáctenme.";
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
+  };
 
   return (
-    <section id="lab" ref={ref} className="py-16 sm:py-24 px-6 lg:px-10 bg-[var(--color-light)]">
+    <section id="lab" className="py-16 sm:py-24 px-6 lg:px-10 bg-[var(--color-light)]">
       <div className="max-w-7xl mx-auto grid gap-10 lg:gap-16 lg:grid-cols-2 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="relative w-full h-[400px] sm:h-[500px] md:h-[640px] order-last lg:order-first"
-        >
+        <div className="relative w-full h-[400px] sm:h-[500px] md:h-[640px] order-last lg:order-first opacity-0 animate-[fadeInLeft_0.8s_ease-out_forwards]">
           {/* Background vignette */}
           <div className="absolute inset-0 rounded-3xl overflow-hidden bg-gradient-to-br from-[#E6F1F8] via-[#D9E9F5] to-[#F4F6F8]" />
 
@@ -31,12 +27,8 @@ export default function Lab() {
           {/* Color glow to separate from background */}
           <div className="absolute -top-10 left-6 w-[520px] h-[520px] md:w-[600px] md:h-[600px] bg-gradient-to-r from-[#0066A4]/30 via-[#4FA9E8]/22 to-[#F5C400]/18 blur-3xl rounded-full" />
 
-          <motion.div
-            className="relative w-full h-full flex items-center justify-center"
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          >
-            <div className="relative w-full max-w-[600px] h-[350px] sm:w-[700px] sm:h-[400px] md:w-[860px] md:h-[470px] lg:w-[940px] lg:h-[520px] z-10">
+          <div className="relative w-full h-full flex items-center justify-center group">
+            <div className="relative w-full max-w-[600px] h-[350px] sm:w-[700px] sm:h-[400px] md:w-[860px] md:h-[470px] lg:w-[940px] lg:h-[520px] z-10 group-hover:scale-105 transition-transform duration-300">
               <Image
                 src="/plantillas/Lab.webp"
                 alt="Lucván Lab"
@@ -46,15 +38,10 @@ export default function Lab() {
                 priority
               />
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="space-y-6 sm:space-y-10"
-        >
+        <div className="space-y-6 sm:space-y-10 opacity-0 animate-[fadeInRight_0.8s_ease-out_0.1s_forwards]">
           <span className="inline-block text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-wide text-[var(--color-primary)]">LucvánLab</span>
           <h2 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight text-[var(--color-primary-dark)]">
             <span className="block">Central de Fabricación</span>
@@ -69,27 +56,25 @@ export default function Lab() {
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary px-8 py-4 text-base shadow-xl flex items-center gap-2 w-fit"
+            <button
+              className="btn-primary px-8 py-4 text-base shadow-xl flex items-center gap-2 w-fit hover:scale-105 active:scale-95 transition-transform"
+              onClick={handleDistributorClick}
+              type="button"
             >
               Solicitar Información
               <span className="text-lg">›</span>
-            </motion.button>
-            <motion.a
+            </button>
+            <a
               href="https://sistema.lucvanlatam.com"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary-dark)] hover:bg-[var(--color-light)] font-semibold shadow-lg flex items-center gap-2 w-fit transition-colors"
+              className="px-8 py-4 rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary-dark)] hover:bg-[var(--color-light)] font-semibold shadow-lg flex items-center gap-2 w-fit transition-all hover:scale-105 active:scale-95"
             >
               Iniciar Sesión
               <span className="text-lg">›</span>
-            </motion.a>
+            </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
